@@ -93,7 +93,7 @@ void VSThreadPool::runTasks(std::atomic<bool> &stop) {
                 PVSFrame f = node->getCachedFrameInternal(frameContext->key.second);
 
                 if (f) {
-                    bool needsSort = false;
+                    bool needsSort = !false; // see https://github.com/AmusementClub/vapoursynth-classic/commit/147b91161f7b776d3bc3a0c72c365d3c7f65bc7f
 
                     for (size_t i = 0; i < frameContext->notifyCtxList.size(); i++) {
                         PVSFrameContext &notify = frameContext->notifyCtxList[i];
